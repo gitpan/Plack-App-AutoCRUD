@@ -4,6 +4,7 @@ author:
   - 'Laurent Dami, C<< <dami at cpan.org> >>'
   - 'Laurent Dami <dami@cpan.org>'
 build_requires:
+  DBD::SQLite: 1.39
   ExtUtils::MakeMaker: 6.59
   Test::More: 0
 configure_requires:
@@ -37,7 +38,6 @@ requires:
   HTTP::Date: 0
   JSON: 0
   List::MoreUtils: 0
-  Log::Dispatch: 0
   Moose: 0
   MooseX::NonMoose: 0
   MooseX::SemiAffordanceAccessor: 0
@@ -59,4 +59,4 @@ resources:
   homepage: https://metacpan.org/author/DAMI
   license: http://www.perlfoundation.org/artistic_license_2_0
   repository: git://github.com/damil/Plack-App-AutoCRUD.git
-version: 0.01
+version: 0.02
