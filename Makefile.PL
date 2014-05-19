@@ -35,6 +35,7 @@ test_requires (
 
 requires (
   'Alien::GvaScript'               => 1.43,
+  'Archive::Zip'                   => 0,
   'Carp'                           => 0,
   'CGI::Expand'                    => 0,
   'Clone'                          => 0,
@@ -53,6 +54,7 @@ requires (
   'MooseX::SemiAffordanceAccessor' => 0,
   'Path::Tiny'                     => 0,
   'Plack'                          => 0,
+  'Scalar::Does'                   => 0,
   'Scalar::Util'                   => 0,
   'SQL::Abstract::FromQuery'       => 0,
   'Template'                       => 0,

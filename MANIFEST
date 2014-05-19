@@ -1,11 +1,12 @@
 Changes
+examples/app.psgi
 examples/Chinook/app.psgi
-examples/Chinook/Chinook_Sqlite_AutoIncrementPKs.sqlite
 examples/Chinook/config_chinook.yaml
 examples/Chinook/README
+examples/download_db.pl
+examples/README
 examples/Sakila/app.psgi
 examples/Sakila/config_sakila.yaml
-examples/Sakila/download.pl
 examples/Sakila/README
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
@@ -24,11 +25,11 @@ lib/Plack/App/AutoCRUD/Context.pm
 lib/Plack/App/AutoCRUD/Controller.pm
 lib/Plack/App/AutoCRUD/Controller/Gvascript.pm
 lib/Plack/App/AutoCRUD/Controller/Home.pm
+lib/Plack/App/AutoCRUD/Controller/Join.pm
 lib/Plack/App/AutoCRUD/Controller/Schema.pm
 lib/Plack/App/AutoCRUD/Controller/Static.pm
 lib/Plack/App/AutoCRUD/Controller/Table.pm
 lib/Plack/App/AutoCRUD/DataSource.pm
-lib/Plack/App/AutoCRUD/Request.pm
 lib/Plack/App/AutoCRUD/share/static/css/styles.css
 lib/Plack/App/AutoCRUD/share/templates/lib/config
 lib/Plack/App/AutoCRUD/share/templates/lib/site/footer
@@ -38,7 +39,7 @@ lib/Plack/App/AutoCRUD/share/templates/lib/site/layout
 lib/Plack/App/AutoCRUD/share/templates/lib/site/wrapper
 lib/Plack/App/AutoCRUD/share/templates/src/error.tt
 lib/Plack/App/AutoCRUD/share/templates/src/home.tt
-lib/Plack/App/AutoCRUD/share/templates/src/schema.tt
+lib/Plack/App/AutoCRUD/share/templates/src/schema/tablegroups.tt
 lib/Plack/App/AutoCRUD/share/templates/src/table/_record.tt
 lib/Plack/App/AutoCRUD/share/templates/src/table/delete.tt
 lib/Plack/App/AutoCRUD/share/templates/src/table/descr.tt
@@ -51,7 +52,9 @@ lib/Plack/App/AutoCRUD/View.pm
 lib/Plack/App/AutoCRUD/View/Download.pm
 lib/Plack/App/AutoCRUD/View/Dumper.pm
 lib/Plack/App/AutoCRUD/View/Json.pm
+lib/Plack/App/AutoCRUD/View/Plain.pm
 lib/Plack/App/AutoCRUD/View/Redirect.pm
+lib/Plack/App/AutoCRUD/View/Tsv.pm
 lib/Plack/App/AutoCRUD/View/TT.pm
 lib/Plack/App/AutoCRUD/View/Xlsx.pm
 lib/Plack/App/AutoCRUD/View/Xml.pm

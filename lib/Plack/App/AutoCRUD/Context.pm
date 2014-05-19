@@ -7,7 +7,7 @@ use warnings;
 use Moose;
 use MooseX::SemiAffordanceAccessor; # writer methods as "set_*"
 use Carp;
-use Scalar::Util qw/reftype/;
+use Scalar::Does qw/does/;
 use Encode       ();
 
 use namespace::clean -except => 'meta';
@@ -30,11 +30,14 @@ has 'process_time' => (is => 'rw', isa => 'Num');
 
 has 'datasource'   => (is => 'rw', isa => 'Plack::App::AutoCRUD::DataSource',
                        handles => [qw/dbh schema/]);
+has 'title'        => (is => 'rw', isa => 'Str',
+                       builder => '_title', lazy => 1);
 
 
 sub _view {
   my $self = shift;
 
+  # default view, if no specific view was required from the URL
   return $self->app->find_class("View::TT")->new;
 }
 
@@ -60,6 +63,16 @@ sub _path {
   my $self = shift;
 
   return $self->req->path;
+}
+
+sub _title {
+  my $self = shift;
+
+  my $title      = $self->app->name;
+  my $datasource = $self->datasource;
+  $title        .= "-" . $datasource->name if $datasource;
+
+  return $title;
 }
 
 
@@ -106,16 +119,14 @@ sub maybe_set_view_from_path {
 
 
 sub _decode_utf8 {
-  for (reftype $_[0]) {
-    when ('ARRAY') {
-      _decode_utf8($_) foreach @{$_[0]};
-    }
-    when ('HASH') {
-      _decode_utf8($_) foreach values %{$_[0]};
-    }
-    default {
-      $_[0] = Encode::decode_utf8($_[0], Encode::FB_CROAK);
-    }
+  if (does($_[0], 'ARRAY')) {
+    _decode_utf8($_) foreach @{$_[0]};
+  }
+  elsif (does($_[0], 'HASH')) {
+    _decode_utf8($_) foreach values %{$_[0]};
+  }
+  else {
+    $_[0] = Encode::decode_utf8($_[0], Encode::FB_CROAK);
   }
 }
 

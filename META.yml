@@ -12,7 +12,7 @@ configure_requires:
   Module::Install: 0
 distribution_type: module
 dynamic_config: 1
-generated_by: 'Module::Install version 1.06'
+generated_by: 'Module::Install version 1.08'
 license: artistic2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -25,6 +25,7 @@ no_index:
     - t
 requires:
   Alien::GvaScript: 1.43
+  Archive::Zip: 0
   CGI::Expand: 0
   Carp: 0
   Clone: 0
@@ -44,6 +45,7 @@ requires:
   Path::Tiny: 0
   Plack: 0
   SQL::Abstract::FromQuery: 0
+  Scalar::Does: 0
   Scalar::Util: 0
   Template: 0
   Time::HiRes: 0
@@ -59,4 +61,4 @@ resources:
   homepage: https://metacpan.org/author/DAMI
   license: http://www.perlfoundation.org/artistic_license_2_0
   repository: git://github.com/damil/Plack-App-AutoCRUD.git
-version: 0.02
+version: 0.03
