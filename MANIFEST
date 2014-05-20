@@ -65,4 +65,5 @@ MANIFEST			This list of files
 META.yml
 README
 t/00_autocrud.t
+t/data/Chinook_Sqlite_AutoIncrementPKs_empty_tables.tst_sqlite
 t/pod.t
